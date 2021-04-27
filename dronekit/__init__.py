@@ -987,6 +987,9 @@ class Locations(HasObservers):
 
 
 class Vehicle(HasObservers):
+    def get_handler(self):
+        return self._handler
+
     """
     The main vehicle API.
 
@@ -3210,4 +3213,5 @@ def connect(ip,
         else:
             vehicle.wait_ready(*wait_ready)
 
+    
     return vehicle
